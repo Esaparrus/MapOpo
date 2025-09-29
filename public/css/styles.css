@@ -1,0 +1,174 @@
+:root {
+  color-scheme: light;
+  font-family: "Inter", "Segoe UI", sans-serif;
+  background-color: #f6f7fb;
+  color: #1d2733;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.app-header,
+.app-footer {
+  padding: 1rem clamp(1rem, 4vw, 3rem);
+  background: white;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  z-index: 1000;
+}
+
+.app-header h1 {
+  margin: 0 0 0.5rem;
+  font-size: clamp(1.5rem, 2.5vw, 2.25rem);
+}
+
+.app-header p {
+  margin: 0;
+  max-width: 60ch;
+  line-height: 1.5;
+}
+
+.app-footer {
+  margin-top: auto;
+  font-size: 0.85rem;
+  color: #52606d;
+}
+
+.app {
+  flex: 1;
+  display: flex;
+  gap: 1rem;
+  padding: 1rem clamp(1rem, 4vw, 3rem);
+  align-items: stretch;
+}
+
+.controls {
+  width: min(360px, 100%);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  background: white;
+  border-radius: 16px;
+  padding: 1.5rem;
+  box-shadow: 0 12px 30px rgba(31, 60, 136, 0.12);
+}
+
+.question {
+  font-size: 1.1rem;
+  font-weight: 600;
+  line-height: 1.6;
+  min-height: 3rem;
+}
+
+.buttons {
+  display: flex;
+  gap: 0.75rem;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  border-radius: 999px;
+  padding: 0.65rem 1.2rem;
+  font-size: 1rem;
+  font-weight: 600;
+  transition: transform 0.1s ease, box-shadow 0.1s ease;
+}
+
+button:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+  box-shadow: none;
+}
+
+#checkButton {
+  background: #005bbb;
+  color: white;
+  box-shadow: 0 10px 25px rgba(0, 91, 187, 0.3);
+}
+
+#checkButton:not(:disabled):hover {
+  transform: translateY(-1px);
+  box-shadow: 0 12px 26px rgba(0, 91, 187, 0.35);
+}
+
+#nextButton {
+  background: #f3f4f6;
+  color: #1d2733;
+  box-shadow: 0 10px 20px rgba(29, 39, 51, 0.08);
+}
+
+.feedback {
+  min-height: 3rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #0f766e;
+}
+
+.feedback.error {
+  color: #dc2626;
+}
+
+.map {
+  flex: 1;
+  min-height: 70vh;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 16px 45px rgba(20, 30, 48, 0.22);
+}
+
+@media (max-width: 1024px) {
+  .app {
+    flex-direction: column;
+  }
+
+  .controls {
+    width: 100%;
+  }
+}
+
+.leaflet-container {
+  width: 100%;
+  height: 100%;
+}
+
+.marker-pin {
+  width: 20px;
+  height: 20px;
+  border-radius: 50% 50% 50% 0;
+  transform: rotate(-45deg);
+  position: relative;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+}
+
+.marker-pin::after {
+  content: "";
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  background: white;
+}
+
+.guess-pin {
+  background: #2563eb;
+}
+
+.target-pin {
+  background: #dc2626;
+}
+
+.distance-line {
+  stroke: #2563eb;
+  stroke-width: 2;
+  stroke-dasharray: 6 6;
+}
