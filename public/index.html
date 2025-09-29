@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MapOpo - Navarra</title>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+      integrity="sha512-o9N1j8MkT1rJ8e+RaHcRUW2KIiMzFxLpy0X58F3RJTJ63eNbUsMUKc7kwh28ykV59CENKz7LFaDlmw1D5u5lkg=="
+      crossorigin=""
+    />
+    <link rel="stylesheet" href="./css/styles.css" />
+  </head>
+  <body>
+    <header class="app-header">
+      <h1>MapOpo Navarra</h1>
+      <p>
+        Localiza elementos geográficos de Navarra en un mapa sin etiquetas. Haz clic
+        para marcar tu respuesta, comprueba la distancia y sigue practicando.
+      </p>
+    </header>
+
+    <main class="app">
+      <section class="controls">
+        <div class="question" id="question"></div>
+        <div class="buttons">
+          <button id="checkButton" disabled>Comprobar</button>
+          <button id="nextButton" disabled>Siguiente pregunta</button>
+        </div>
+        <div class="feedback" id="feedback"></div>
+      </section>
+      <div id="map" class="map"></div>
+    </main>
+
+    <footer class="app-footer">
+      <small>
+        Fuente de teselas: CartoDB Positron (sin etiquetas). Datos de referencia aproximados.
+      </small>
+    </footer>
+
+    <script
+      src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+      integrity="sha512-vZTG03ZVKPPoX0F2Xn5BXAv89xDSHLVbkP4SRrped1IovnHgwlHGawEq+y3OCAXoTrZJ3GJ3kbG8h0L730GJQw=="
+      crossorigin=""
+    ></script>
+    <script type="module" src="./js/app.js"></script>
+  </body>
+</html>
